@@ -3,31 +3,42 @@
 
 #include <SDL.h>
 #include <SDL_image.h>
+#include "Fractal.h"
+
 
 class Renderer {
 public:
-	//Screen dimension constants
-	int SCREEN_WIDTH = 560;
-	int SCREEN_HEIGHT = 560;
+	
 
-	//The window we'll be rendering to
-	SDL_Window* gWindow = NULL;
-
-	//The window renderer
-	SDL_Renderer* gRenderer = NULL;
-
+	Renderer(int w, int h);
+	~Renderer();
 	//methods
 
 	//Starts up SDL and creates window
 	bool init();
 
-	//render to screen
-	bool render();
+	//render texture to screen
+	bool render_texture();
 
-	//Loads media
-	bool loadMedia();
+	bool render_fractal(Fractal fractal);
+
+	bool clear();
+	bool make_texture(Fractal);
 
 	//Frees media and shuts down SDL
 	void close();
+
+//Screen dimension constants
+	int SCREEN_WIDTH;
+	int SCREEN_HEIGHT;
+
+	//The window we'll be rendering to
+	SDL_Window* window = NULL;
+
+	//The window renderer
+	SDL_Renderer* renderer = NULL;
+
+	// texture to be rendered
+	SDL_Texture* texture = NULL;
 
 };
