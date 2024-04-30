@@ -19,7 +19,7 @@
 int main(int argc, char* args[])
 {
 	std::cout << "hello!" << std::endl;
-	Renderer renderer(1080, 1080);
+	Renderer renderer(500, 500);
 	//Start up SDL and create window
 	
 	Grid grid(renderer.SCREEN_WIDTH, renderer.SCREEN_HEIGHT);

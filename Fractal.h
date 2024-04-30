@@ -18,6 +18,7 @@ public:
 	//algorithm lambdas
 	int mandelbrot_iterate(std::complex<double> const &constant);
 
+	int julia_iterate(std::complex<double> constant);
 	//aesthetic
 
 
