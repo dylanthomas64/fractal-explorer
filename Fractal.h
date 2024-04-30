@@ -18,6 +18,10 @@ public:
 	//algorithm lambdas
 	int mandelbrot_iterate(std::complex<double> const &constant);
 
+<<<<<<< HEAD
+=======
+	int julia_iterate(std::complex<double> constant);
+>>>>>>> dev
 	//aesthetic
 
 
