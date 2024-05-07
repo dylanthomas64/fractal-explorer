@@ -18,11 +18,7 @@ void Fractal::make_mandelbrot(std::vector<std::vector<std::complex<double>>> coo
 		iterations_row.clear();
 		//std::transform(coord_row.begin(), coord_row.end(), iterations_row.begin(), mandelbrot_closure);
 		for (std::complex<double> c : coord_row) {
-<<<<<<< HEAD
-			iterations_row.emplace_back(mandelbrot_iterate(c));
-=======
 			iterations_row.emplace_back(julia_iterate(c));
->>>>>>> dev
 		}
 		this->iterations_grid.push_back(iterations_row);
 	}
@@ -42,8 +38,6 @@ int Fractal::mandelbrot_iterate(std::complex<double> const &constant) {
 	return 0;
 }
 
-<<<<<<< HEAD
-=======
 int Fractal::julia_iterate(std::complex<double> z) {
 	std::complex<double> c{ 0.0, 0.0 };
 	for (int i = 0; i < this->max_iterations; i++) {
@@ -54,4 +48,3 @@ int Fractal::julia_iterate(std::complex<double> z) {
 	}
 	return 0;
 }
->>>>>>> dev
