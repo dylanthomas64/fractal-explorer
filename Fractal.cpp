@@ -22,6 +22,7 @@ void Fractal::make_mandelbrot(std::vector<std::vector<std::complex<double>>> coo
 		}
 		this->iterations_grid.push_back(iterations_row);
 	}
+	// Just a comment from Dad
 }
 
 
