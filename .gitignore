@@ -4,5 +4,6 @@
 # Except for the following:
 !/src
 !/lib
+!/include
 !README*
 !CMakeLists.txt
