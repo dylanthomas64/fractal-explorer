@@ -29,7 +29,7 @@ void Fractal::make_mandelbrot(std::vector<std::vector<std::complex<double>>> coo
 
 // function to take a complex coord and calculate its total iterations
 int Fractal::mandelbrot_iterate(std::complex<double> const &constant) {
-	std::complex<double> z { 0.0, 0.0 };
+	std::complex<double> z { 0.0, 0.0 } ;
 	for (int i = 0; i < this->max_iterations; i++) {
 		z = std::pow(z, 2) + constant;
 		if (std::norm(z) >= 4) {
