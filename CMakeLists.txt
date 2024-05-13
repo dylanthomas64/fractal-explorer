@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(fractal-explorer)
 
-#if you installed sdl without a package manager you may need to include a path to the library
-#list(APPEND CMAKE_PREFIX_PATH "C:/VSLib/SDL2-2.28.4")
+#if find_package fails you can provide the SDL library PATH
+#list(APPEND CMAKE_PREFIX_PATH "@PATH@")
 
 # 1. Look for a SDL2 package, 2. look for the SDL2 component and 3. fail if none can be found
 find_package(SDL2 REQUIRED CONFIG REQUIRED COMPONENTS SDL2)
@@ -13,8 +13,9 @@ find_package(SDL2 REQUIRED CONFIG COMPONENTS SDL2main)
 
 include_directories(fractal-explorer ${CMAKE_CURRENT_SOURCE_DIR}/headers/)
 
+set(SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 
-add_executable(fractal-explorer ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/Grid.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/Fractal.cpp ${CMAKE_CURRENT_SOURCE_DIR}/src/Renderer.cpp)
+add_executable(fractal-explorer ${SOURCE}/main.cpp ${SOURCE}/Grid.cpp ${SOURCE}/Fractal.cpp ${SOURCE}/Renderer.cpp)
 
 # SDL2::SDL2main may or may not be available. It is e.g. required by Windows GUI applications
 if(TARGET SDL2::SDL2main)
