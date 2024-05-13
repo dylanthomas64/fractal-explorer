@@ -17,20 +17,20 @@
 
 int main(int argc, char* args[])
 {
-	std::cout << "hello!" << std::endl;
+	//std::cout << "hello!" << std::endl;
 	Renderer renderer(500, 500);
 	//Start up SDL and create window
 	
 	Grid grid(renderer.SCREEN_WIDTH, renderer.SCREEN_HEIGHT);
 
 
-	Fractal mandelbrot(50);
-	mandelbrot.make_mandelbrot(grid.get());
+	Fractal julia(50);
+	julia.make_mandelbrot(grid.get());
 	renderer.clear();
-	//renderer.make_texture(mandelbrot);
-	renderer.render_fractal(mandelbrot);
-	std::cin.get();
+	renderer.render_fractal(julia);
 
+	//Hack to get window to stay up
+	SDL_Event e; bool quit = false; while (quit == false) { while (SDL_PollEvent(&e)) { if (e.type == SDL_QUIT) quit = true; } }
 
 	//Free resources and close SDL
 	renderer.close();

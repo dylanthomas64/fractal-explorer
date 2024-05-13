@@ -40,7 +40,7 @@ int Fractal::mandelbrot_iterate(std::complex<double> const &constant) {
 }
 
 int Fractal::julia_iterate(std::complex<double> z) {
-	std::complex<double> c{ 0.0, 0.0 };
+	std::complex<double> c{ -0.86, 0.24 };
 	for (int i = 0; i < this->max_iterations; i++) {
 		z = std::pow(z, 2) + c;
 		if (std::norm(z) >= 4) {
