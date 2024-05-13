@@ -9,6 +9,9 @@ https://wiki.libsdl.org/SDL2/Installation
 
 
 mkdir build
+
 cd build
+
 cmake ..
+
 cmake --build .
