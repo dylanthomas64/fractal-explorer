@@ -15,6 +15,10 @@ include_directories(fractal-explorer ${CMAKE_CURRENT_SOURCE_DIR}/headers/)
 
 set(SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS ON)
+
 add_executable(fractal-explorer ${SOURCE}/main.cpp ${SOURCE}/Grid.cpp ${SOURCE}/Fractal.cpp ${SOURCE}/Renderer.cpp)
 
 # SDL2::SDL2main may or may not be available. It is e.g. required by Windows GUI applications
