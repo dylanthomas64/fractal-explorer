@@ -90,7 +90,7 @@ bool Renderer::render_texture() {
 	return true;
 }
 
-bool Renderer::render_fractal (Fractal fractal) {
+bool Renderer::render_fractal (FractalGrid fractal) {
 	// clear existing texture
 	SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 	SDL_RenderClear(renderer);
@@ -121,7 +121,7 @@ bool Renderer::render_fractal (Fractal fractal) {
 	return true;
 }
 
-bool Renderer::make_texture(Fractal fractal) {
+bool Renderer::make_texture(FractalGrid fractal) {
 	// clear existing texture
 	SDL_SetRenderTarget(renderer, texture);
 	SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);

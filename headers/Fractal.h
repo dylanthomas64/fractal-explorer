@@ -2,25 +2,27 @@
 #include<vector>
 #include<complex>
 
+enum class FractalType {mandelbrot, julia};
 
-//2dvector of speed of escape represenentation of the pixels on the screen
-class Fractal
+
+// 2dvector of ints mapped from Grid, representing a fractal set e.g. escape velocity
+class FractalGrid
 {
 public:
-	Fractal();
-	Fractal(int iterations);
-	~Fractal();
+	FractalGrid(int iterations = 50);
+	~FractalGrid();
 
 	// variables
-
 	int max_iterations;
 
-	//algorithm lambdas
+	// fractaltype
+
+	// algorithms
 	int mandelbrot_iterate(std::complex<double> const &constant);
-
 	int julia_iterate(std::complex<double> constant);
-	//aesthetic
 
+	// aesthetic
+	// TODO
 
 
 	//2d vector of iteration values for each pixel
@@ -28,9 +30,7 @@ public:
 
 
 	// convert a grid of complex points to a grid of iterations
-	void make_mandelbrot(std::vector<std::vector<std::complex<double>>> coords);
-	//converts a single complex point to its number of iterations
-	//void make_julia(Grid grid);
+	void generate_fractal(std::vector<std::vector<std::complex<double>>> coords);
 
 
 

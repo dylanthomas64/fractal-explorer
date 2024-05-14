@@ -2,15 +2,8 @@
 #include <complex>
 #include<vector>
 
-Grid::Grid(int w, int h) {
-	this->w = w;
-	this->h = h;
-	//top left pixel
-	c_zero = std::complex<double>(-2, 1.5);
-	//width of grid cartesian grid
-	range = 3;
+Grid::Grid(int w, int h, std::complex<double> c_zero, int range) : w(w), h(h), c_zero(c_zero), range(range) {
 	make_grid();
-
 }
 
 Grid::~Grid() {
@@ -29,9 +22,14 @@ void Grid::make_grid() {
 		}
 		grid.push_back(row);
 	}
-	this->cartesian_grid = grid;
+	this->grid = grid;
 }
 
 std::vector<std::vector<std::complex<double>>> Grid::get() {
-	return this->cartesian_grid;
+	return this->grid;
+}
+
+void Grid::set(std::complex<double> c_zero, int range) {
+	this->c_zero = c_zero;
+	this->range = range;
 }

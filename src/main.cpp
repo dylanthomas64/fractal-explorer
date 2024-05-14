@@ -1,31 +1,21 @@
 #include <iostream>
-
-
 #include <SDL.h>
 
-#include "Renderer.h";
-#include "Grid.h";
+#include "Renderer.h"
+#include "Grid.h"
 
-
-
-
-
-
-
-
-// MAIN -------------------------------------- //
 
 int main(int argc, char* args[])
 {
-	//std::cout << "hello!" << std::endl;
-	Renderer renderer(500, 500);
 	//Start up SDL and create window
+	Renderer renderer(800, 450);
 	
-	Grid grid(renderer.SCREEN_WIDTH, renderer.SCREEN_HEIGHT);
+	//create grid
+	Grid grid(renderer.SCREEN_WIDTH, renderer.SCREEN_HEIGHT, std::complex<double>(-2, 1), 3);
 
-
-	Fractal julia(50);
-	julia.make_mandelbrot(grid.get());
+	//map grid to fractal grid
+	FractalGrid julia(85);
+	julia.generate_fractal(grid.get());
 	renderer.clear();
 	renderer.render_fractal(julia);
 
@@ -37,9 +27,3 @@ int main(int argc, char* args[])
 
 	return 0;
 }
-
-
-// MAIN -------------------------------------- //
-
-
-
