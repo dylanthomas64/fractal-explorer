@@ -2,20 +2,20 @@
 #include<vector>
 #include<complex>
 
-enum class FractalType {mandelbrot, julia};
+enum class FractalType {mandelbrot, julia, multi, none};
 
 
 // 2dvector of ints mapped from Grid, representing a fractal set e.g. escape velocity
 class FractalGrid
 {
 public:
-	FractalGrid(int iterations = 50);
+	FractalGrid(int iterations = 50, FractalType fractal_type = FractalType::mandelbrot);
 	~FractalGrid();
 
 	// variables
 	int max_iterations;
 
-	// fractaltype
+	FractalType fractal_type;
 
 	// algorithms
 	int mandelbrot_iterate(std::complex<double> const &constant);
