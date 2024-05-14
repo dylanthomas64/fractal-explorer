@@ -2,7 +2,7 @@
 #include<vector>
 #include<complex>
 
-enum class FractalType {mandelbrot, julia};
+enum class FractalType {mandelbrot, julia, multi};
 
 
 // 2dvector of ints mapped from Grid, representing a fractal set e.g. escape velocity
