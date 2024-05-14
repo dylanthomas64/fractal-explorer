@@ -1,6 +1,4 @@
 #pragma once
-
-
 #include <SDL.h>
 #include "Fractal.h"
 
@@ -19,15 +17,15 @@ public:
 	//render texture to screen
 	bool render_texture();
 
-	bool render_fractal(Fractal fractal);
+	bool render_fractal(FractalGrid fractal);
 
 	bool clear();
-	bool make_texture(Fractal);
+	bool make_texture(FractalGrid);
 
 	//Frees media and shuts down SDL
 	void close();
 
-//Screen dimension constants
+	//Screen dimension constants
 	int SCREEN_WIDTH;
 	int SCREEN_HEIGHT;
 

@@ -1,45 +1,29 @@
 #include <iostream>
-
-
 #include <SDL.h>
 
-#include "Renderer.h";
-#include "Grid.h";
+#include "Renderer.h"
+#include "Grid.h"
 
-
-
-
-
-
-
-
-// MAIN -------------------------------------- //
 
 int main(int argc, char* args[])
 {
-	std::cout << "hello!" << std::endl;
-	Renderer renderer(500, 500);
 	//Start up SDL and create window
+	Renderer renderer(800, 450);
 	
-	Grid grid(renderer.SCREEN_WIDTH, renderer.SCREEN_HEIGHT);
+	//create grid
+	Grid grid(renderer.SCREEN_WIDTH, renderer.SCREEN_HEIGHT, std::complex<double>(-2, 1), 3);
 
-
-	Fractal mandelbrot(50);
-	mandelbrot.make_mandelbrot(grid.get());
+	//map grid to fractal grid
+	FractalGrid julia(85);
+	julia.generate_fractal(grid.get());
 	renderer.clear();
-	//renderer.make_texture(mandelbrot);
-	renderer.render_fractal(mandelbrot);
-	std::cin.get();
+	renderer.render_fractal(julia);
 
+	//Hack to get window to stay up
+	SDL_Event e; bool quit = false; while (quit == false) { while (SDL_PollEvent(&e)) { if (e.type == SDL_QUIT) quit = true; } }
 
 	//Free resources and close SDL
 	renderer.close();
 
 	return 0;
 }
-
-
-// MAIN -------------------------------------- //
-
-
-
