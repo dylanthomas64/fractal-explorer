@@ -1,6 +1,6 @@
 # FractalExplorer
 
-generates mandelbrot and julia fractals
+Generates mandelbrot and julia fractals
 
 requires SDL2
 
