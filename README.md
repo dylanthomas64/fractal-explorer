@@ -4,6 +4,23 @@ generates mandelbrot and julia fractals
 
 requires SDL2
 
+
+
+
+
+
+![Screenshot 2024-03-16 140140](https://github.com/user-attachments/assets/9ef28864-ffab-4346-8b9f-6876a71797d3)
+
+
+
+
+
+
+
+
+
+
+
 # Installation with package manager
 
 install sdl with your package manager
